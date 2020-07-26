@@ -25,6 +25,7 @@ public class NetClientHandler extends SimpleChannelInboundHandler<DataPackage> {
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         System.out.println("服务端关闭");
+        netClient.noticeWorkerConnect();
         super.channelInactive(ctx);
     }
 

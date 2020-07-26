@@ -1,11 +1,7 @@
 package org.hycode.net;
 
-public abstract class Schedule implements Runnable {
+public abstract class Schedule extends Worker {
     protected final ScheduleManager scheduleManager;
-    protected final Object object = new Object();
-    protected boolean run;
-    protected boolean stop = false;
-    protected Thread thread;
     protected int cycleTime;
     protected long startTime;
 
@@ -30,53 +26,10 @@ public abstract class Schedule implements Runnable {
         return scheduleManager;
     }
 
-    public boolean isRun() {
-        return run;
-    }
-
-    public void setRun(boolean run) {
-        this.run = run;
-    }
-
-    public boolean isStop() {
-        return stop;
-    }
-
-    public void setStop(boolean stop) {
-        this.stop = stop;
-    }
-
-    public Thread getThread() {
-        return thread;
-    }
-
-    public void setThread(Thread thread) {
-        this.thread = thread;
-    }
-
-    protected abstract void task();
-
-
-    public void resume() {
-        synchronized (object) {
-            if (!run) {
-                this.object.notify();
-            }
-        }
-    }
-
-    public void stop() {
-        this.stop = true;
-    }
-
-    public void pause() {
-        if (run) {
-            this.run = false;
-        }
-    }
+    public abstract void task();
 
     @Override
-    public void run() {
+    public void work() {
         this.thread = Thread.currentThread();
         while (!stop) {
             synchronized (object) {
@@ -98,12 +51,5 @@ public abstract class Schedule implements Runnable {
         }
     }
 
-    @Override
-    public int hashCode() {
-        return this.getClass().hashCode();
-    }
 
-    public void start() {
-        this.run = true;
-    }
 }

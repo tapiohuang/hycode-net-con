@@ -19,7 +19,7 @@ public class HeartCheckSchedule extends Schedule {
     }
 
     @Override
-    protected void task() {
+    public void task() {
         HashSet<Channel> channels = this.netServer.getNetServerChannelManager().getChannels();
         channels.forEach((channel) -> {
             HeartCheckerWithAuthData heartCheckerWithAuthData = new HeartCheckerWithAuthData();
