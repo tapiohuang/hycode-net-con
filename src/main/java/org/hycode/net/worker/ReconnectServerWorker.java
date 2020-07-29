@@ -19,13 +19,21 @@ public class ReconnectServerWorker extends Worker {
                     if (netClient.isConnect()) {
                         object.wait();
                     } else {
-                        netClient.connect0();
-                        object.wait(10000);
+                        if (netClient.isReconnect()) {
+                            netClient.connect0();
+                            object.wait(10000);
+                        } else if (netClient.getReconnectTimes() == 0) {
+                            netClient.connect0();
+                            break;
+                        }
                     }
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                 }
             }
+        }
+        if (!netClient.isConnect()) {
+            throw new RuntimeException("无法连接服务器!");
         }
     }
 

@@ -9,6 +9,7 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import org.hycode.net.worker.ReconnectServerWorker;
 
+import java.net.ConnectException;
 import java.util.LinkedList;
 
 public class NetClient implements NetSessionAdvisor, FilterAdvisor, ProcessorAdvisor, SchedulableAdvisor {
@@ -18,11 +19,12 @@ public class NetClient implements NetSessionAdvisor, FilterAdvisor, ProcessorAdv
     private final NetSessionFactory netSessionFactory;
     private final LinkedList<Filter> filters;
     private final ScheduleManager scheduleManager;
-    private final boolean reconnect = true;
+    private boolean reconnect = true;
     private String host;
     private Integer port;
     private Channel channel;
     private ReconnectServerWorker reconnectServerWorker;
+    private int reconnectTimes = 0;
 
     public NetClient() {
         bootstrap = new Bootstrap();
@@ -35,10 +37,14 @@ public class NetClient implements NetSessionAdvisor, FilterAdvisor, ProcessorAdv
         scheduleManager = new ScheduleManager();
     }
 
+    public boolean isReconnect() {
+        return reconnect;
+    }
+
     public boolean isConnect() {
         synchronized (this) {
             if (this.channel == null) {
-                return true;
+                return false;
             }
             return this.channel.isOpen() || this.channel.isActive();
         }
@@ -55,43 +61,38 @@ public class NetClient implements NetSessionAdvisor, FilterAdvisor, ProcessorAdv
     }
 
 
-    public void connect0() {
-        ChannelFuture future = null;
+    public void connect0() throws InterruptedException {
         try {
-            future = bootstrap.connect(this.host, this.port).sync();
+            reconnectTimes++;
+            ChannelFuture future = bootstrap.connect(this.host, this.port).sync();
             if (!future.isSuccess()) {
                 throw new RuntimeException("连接失败");
             } else {
                 synchronized (this) {
+                    reconnectTimes = 0;
                     channel = future.channel();
                 }
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
         }
     }
 
-    public NetClient connect() {
+    public void connect() {
         this.processorManager.map();
         this.registerClose();
-        this.registerReconnectWorker();
-        try {
-            bootstrap.handler(new ChannelInitializer<SocketChannel>() {
-                protected void initChannel(SocketChannel ch) throws Exception {
-                    ch.pipeline().addLast(new DataToByteEncoder());
-                    //ch.pipeline().addLast(new NetDataToDataPackage());
+        bootstrap.handler(new ChannelInitializer<SocketChannel>() {
+            protected void initChannel(SocketChannel ch) throws Exception {
+                ch.pipeline().addLast(new DataToByteEncoder());
+                //ch.pipeline().addLast(new NetDataToDataPackage());
 
-                    ch.pipeline().addLast(new ByteToDataDecoder());
-                    ch.pipeline().addLast(new NetClientHandler(NetClient.this));
-                }
-            });
-            this.connect0();
-        } catch (Throwable e) {
-            e.printStackTrace();
-            this.group.shutdownGracefully();
-        }
-        return this;
+                ch.pipeline().addLast(new ByteToDataDecoder());
+                ch.pipeline().addLast(new NetClientHandler(NetClient.this));
+            }
+        });
+        this.registerReconnectWorker();
     }
+
 
     public NetSession openSession() {
         return netSessionFactory.getSession();
@@ -148,5 +149,13 @@ public class NetClient implements NetSessionAdvisor, FilterAdvisor, ProcessorAdv
         if (reconnect) {
             reconnectServerWorker.notifyWorker();
         }
+    }
+
+    public void reconnect(boolean reconnect) {
+        this.reconnect = reconnect;
+    }
+
+    public int getReconnectTimes() {
+        return reconnectTimes;
     }
 }

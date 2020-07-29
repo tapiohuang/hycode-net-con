@@ -10,9 +10,7 @@ public class ServerTest {
         NetServer netServer = new NetServer();
         netServer.processor(new HeartCheckProcessor(netServer));
         netServer.filter(new NetSessionFilter(netServer));
-        HeartCheckSchedule heartCheckSchedule = new HeartCheckSchedule(netServer);
-        heartCheckSchedule.cycleTime(10);
-        netServer.schedule(heartCheckSchedule);
+        netServer.heartCheck(true);
         netServer.port(10056).bind();
     }
 }

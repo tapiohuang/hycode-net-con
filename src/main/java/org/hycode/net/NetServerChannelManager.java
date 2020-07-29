@@ -11,9 +11,9 @@ public class NetServerChannelManager implements ClientIdChannelManager {
     private final HashMap<Channel, String> channelClientIdMap;
     
     public NetServerChannelManager() {
-        channels = new HashSet<Channel>();
-        clientIdChannelMap = new HashMap<String, Channel>();
-        channelClientIdMap = new HashMap<Channel, String>();
+        channels = new HashSet<>();
+        clientIdChannelMap = new HashMap<>();
+        channelClientIdMap = new HashMap<>();
     }
 
     public HashSet<Channel> getChannels() {

@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1f6cc47-10d4-44ca-abea-e83e502e1671" name="Default Changelist" comment="" />
+    <list default="true" id="d1f6cc47-10d4-44ca-abea-e83e502e1671" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hycode/net/EventPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hycode/net/NetClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hycode/net/NetClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hycode/net/NetServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hycode/net/NetServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hycode/net/NetServerChannelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hycode/net/NetServerChannelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hycode/net/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hycode/net/Schedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hycode/net/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hycode/net/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hycode/net/schedules/HeartCheckSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hycode/net/schedules/HeartCheckSchedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hycode/net/test/ServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hycode/net/test/ServerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hycode/net/worker/ReconnectServerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hycode/net/worker/ReconnectServerWorker.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +26,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -24,6 +38,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1ec3hQWfz0MYP7amC3ey0GEmASW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -34,10 +49,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/org/hycode/net" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -47,7 +62,7 @@
       <recent name="D:\java\hycode-net-con\src\main\java\org\hycode\net" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.report">
+  <component name="RunManager" selected="Application.client">
     <configuration name="client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.hycode.net.test.ClientTest" />
       <module name="hycode-net-con" />
@@ -94,7 +109,9 @@
       <workItem from="1595145674031" duration="1285000" />
       <workItem from="1595443861893" duration="6117000" />
       <workItem from="1595486422146" duration="599000" />
-      <workItem from="1595579799733" duration="8026000" />
+      <workItem from="1595579799733" duration="8436000" />
+      <workItem from="1595689005479" duration="3000" />
+      <workItem from="1595689047742" duration="18190000" />
     </task>
     <servers />
   </component>
@@ -102,10 +119,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1013" y="382" key="#Project_Structure" timestamp="1595600362272">
+    <state x="1013" y="382" key="#Project_Structure" timestamp="1595818787014">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="1013" y="382" key="#Project_Structure/0.0.2560.1410@0.0.2560.1410" timestamp="1595600362272" />
+    <state x="1013" y="382" key="#Project_Structure/0.0.2560.1410@0.0.2560.1410" timestamp="1595818787014" />
     <state x="945" y="405" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595599848791">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -114,10 +131,10 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1271" y="455" key="#com.intellij.ide.macro.MacrosDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1595599815534" />
-    <state x="1084" y="388" key="#com.intellij.ide.util.MemberChooser" timestamp="1595597909407">
+    <state x="1084" y="388" key="#com.intellij.ide.util.MemberChooser" timestamp="1595818474977">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="1084" y="388" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1410@0.0.2560.1410" timestamp="1595597909407" />
+    <state x="1084" y="388" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1410@0.0.2560.1410" timestamp="1595818474977" />
     <state x="1008" y="493" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1595599584346">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -150,46 +167,78 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1059" y="458" key="FileChooserDialogImpl/0.0.2560.1410@0.0.2560.1410" timestamp="1594607279992" />
-    <state width="1687" height="317" key="GridCell.Tab.0.bottom" timestamp="1595599851331">
+    <state width="2515" height="313" key="GridCell.Tab.0.bottom" timestamp="1595819526149">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1687" height="317" key="GridCell.Tab.0.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1595599851331" />
-    <state width="1687" height="317" key="GridCell.Tab.0.center" timestamp="1595599851331">
+    <state width="2515" height="313" key="GridCell.Tab.0.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1595819526149" />
+    <state width="2515" height="313" key="GridCell.Tab.0.center" timestamp="1595819526149">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1687" height="317" key="GridCell.Tab.0.center/0.0.2560.1410@0.0.2560.1410" timestamp="1595599851331" />
-    <state width="1687" height="317" key="GridCell.Tab.0.left" timestamp="1595599851331">
+    <state width="2515" height="313" key="GridCell.Tab.0.center/0.0.2560.1410@0.0.2560.1410" timestamp="1595819526149" />
+    <state width="2515" height="313" key="GridCell.Tab.0.left" timestamp="1595819526149">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1687" height="317" key="GridCell.Tab.0.left/0.0.2560.1410@0.0.2560.1410" timestamp="1595599851331" />
-    <state width="1687" height="317" key="GridCell.Tab.0.right" timestamp="1595599851331">
+    <state width="2515" height="313" key="GridCell.Tab.0.left/0.0.2560.1410@0.0.2560.1410" timestamp="1595819526149" />
+    <state width="2515" height="313" key="GridCell.Tab.0.right" timestamp="1595819526149">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1687" height="317" key="GridCell.Tab.0.right/0.0.2560.1410@0.0.2560.1410" timestamp="1595599851331" />
-    <state width="1687" height="317" key="GridCell.Tab.1.bottom" timestamp="1595599851447">
+    <state width="2515" height="313" key="GridCell.Tab.0.right/0.0.2560.1410@0.0.2560.1410" timestamp="1595819526149" />
+    <state width="2515" height="720" key="GridCell.Tab.1.bottom" timestamp="1595823554893">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1687" height="317" key="GridCell.Tab.1.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1595599851447" />
-    <state width="1687" height="317" key="GridCell.Tab.1.center" timestamp="1595599851447">
+    <state width="2515" height="720" key="GridCell.Tab.1.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1595823554893" />
+    <state width="2515" height="720" key="GridCell.Tab.1.center" timestamp="1595823554893">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1687" height="317" key="GridCell.Tab.1.center/0.0.2560.1410@0.0.2560.1410" timestamp="1595599851447" />
-    <state width="1687" height="317" key="GridCell.Tab.1.left" timestamp="1595599851447">
+    <state width="2515" height="720" key="GridCell.Tab.1.center/0.0.2560.1410@0.0.2560.1410" timestamp="1595823554893" />
+    <state width="2515" height="720" key="GridCell.Tab.1.left" timestamp="1595823554892">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1687" height="317" key="GridCell.Tab.1.left/0.0.2560.1410@0.0.2560.1410" timestamp="1595599851447" />
-    <state width="1687" height="317" key="GridCell.Tab.1.right" timestamp="1595599851447">
+    <state width="2515" height="720" key="GridCell.Tab.1.left/0.0.2560.1410@0.0.2560.1410" timestamp="1595823554892" />
+    <state width="2515" height="720" key="GridCell.Tab.1.right" timestamp="1595823554893">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="1687" height="317" key="GridCell.Tab.1.right/0.0.2560.1410@0.0.2560.1410" timestamp="1595599851447" />
+    <state width="2515" height="720" key="GridCell.Tab.1.right/0.0.2560.1410@0.0.2560.1410" timestamp="1595823554893" />
+    <state width="2515" height="647" key="GridCell.Tab.2.bottom" timestamp="1595764461653">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2515" height="647" key="GridCell.Tab.2.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1595764461653" />
+    <state width="2515" height="647" key="GridCell.Tab.2.center" timestamp="1595764461652">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2515" height="647" key="GridCell.Tab.2.center/0.0.2560.1410@0.0.2560.1410" timestamp="1595764461652" />
+    <state width="2515" height="647" key="GridCell.Tab.2.left" timestamp="1595764461652">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2515" height="647" key="GridCell.Tab.2.left/0.0.2560.1410@0.0.2560.1410" timestamp="1595764461652" />
+    <state width="2515" height="647" key="GridCell.Tab.2.right" timestamp="1595764461653">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2515" height="647" key="GridCell.Tab.2.right/0.0.2560.1410@0.0.2560.1410" timestamp="1595764461653" />
+    <state width="2515" height="647" key="GridCell.Tab.3.bottom" timestamp="1595764451714">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2515" height="647" key="GridCell.Tab.3.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1595764451714" />
+    <state width="2515" height="647" key="GridCell.Tab.3.center" timestamp="1595764451714">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2515" height="647" key="GridCell.Tab.3.center/0.0.2560.1410@0.0.2560.1410" timestamp="1595764451714" />
+    <state width="2515" height="647" key="GridCell.Tab.3.left" timestamp="1595764451714">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2515" height="647" key="GridCell.Tab.3.left/0.0.2560.1410@0.0.2560.1410" timestamp="1595764451714" />
+    <state width="2515" height="647" key="GridCell.Tab.3.right" timestamp="1595764451714">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2515" height="647" key="GridCell.Tab.3.right/0.0.2560.1410@0.0.2560.1410" timestamp="1595764451714" />
     <state x="809" y="359" key="Maven.ArtifactSearchDialog" timestamp="1594607249515">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="809" y="359" key="Maven.ArtifactSearchDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1594607249515" />
-    <state x="780" y="348" key="SettingsEditor" timestamp="1594705057494">
+    <state x="780" y="348" key="SettingsEditor" timestamp="1595819381790">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="780" y="348" key="SettingsEditor/0.0.2560.1410@0.0.2560.1410" timestamp="1594705057494" />
+    <state x="780" y="348" key="SettingsEditor/0.0.2560.1410@0.0.2560.1410" timestamp="1595819381790" />
     <state x="1050" y="494" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1595594577484">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -198,13 +247,24 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="908" y="468" key="new project wizard/0.0.2560.1410@0.0.2560.1410" timestamp="1595599463066" />
-    <state x="1059" y="449" key="refactoring.ChangeSignatureDialog" timestamp="1595481363638">
+    <state x="1059" y="449" key="refactoring.ChangeSignatureDialog" timestamp="1595819201918">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="1059" y="449" key="refactoring.ChangeSignatureDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1595481363638" />
+    <state x="1059" y="449" key="refactoring.ChangeSignatureDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1595819201918" />
     <state x="943" y="317" width="672" height="678" key="search.everywhere.popup" timestamp="1595480776532">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="943" y="317" width="672" height="678" key="search.everywhere.popup/0.0.2560.1410@0.0.2560.1410" timestamp="1595480776532" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/hycode/net/NetClient.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

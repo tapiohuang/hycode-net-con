@@ -12,10 +12,14 @@ public class HeartCheckSchedule extends Schedule {
     private final NetServer netServer;
     private NetServerChannelManager netServerChannelManager;
 
-    public HeartCheckSchedule(NetServer netServer) {
+    /**
+     * @param netServer NetServer
+     * @param cycleTime 周期 秒
+     */
+    public HeartCheckSchedule(NetServer netServer, int cycleTime) {
         super(netServer.getScheduleManager());
         this.netServer = netServer;
-        this.cycleTime(5);
+        this.cycleTime(cycleTime);
     }
 
     @Override

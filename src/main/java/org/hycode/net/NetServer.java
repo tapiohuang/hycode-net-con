@@ -5,6 +5,7 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import org.hycode.net.schedules.HeartCheckSchedule;
 
 import java.util.LinkedList;
 
@@ -18,6 +19,7 @@ public class NetServer implements NetSessionAdvisor, FilterAdvisor, SchedulableA
     private final LinkedList<Filter> filters;
     private final ScheduleManager scheduleManager;
     private Integer port = null;
+    private boolean heartCheck = false;
 
     public NetServer() {
         this.bootstrap = new ServerBootstrap();
@@ -110,6 +112,18 @@ public class NetServer implements NetSessionAdvisor, FilterAdvisor, SchedulableA
     public ProcessorAdvisor processor(Processor<? extends NetData> processor) {
         return processorManager.processor(processor);
     }
+
+    public NetServer heartCheck(boolean heartCheck, int cycleTime) {
+        this.heartCheck = heartCheck;
+        HeartCheckSchedule heartCheckSchedule = new HeartCheckSchedule(this, cycleTime);
+        this.schedule(heartCheckSchedule);
+        return this;
+    }
+
+    public NetServer heartCheck(boolean heartCheck) {
+        return this.heartCheck(heartCheck, 60);//默认心跳检测一分钟
+    }
+
 
     private void registerClose() {
         Thread t = new Thread(new Runnable() {

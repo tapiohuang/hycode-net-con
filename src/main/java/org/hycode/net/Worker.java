@@ -46,23 +46,6 @@ public abstract class Worker implements Runnable {
     public void run() {
         this.thread = Thread.currentThread();
         this.work();
-       /* while (!stop) {
-            synchronized (object) {
-                if (run) {
-                    try {
-                        this.task();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                    }
-                } else {
-                    try {
-                        object.wait();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }*/
     }
 
     public Thread getThread() {

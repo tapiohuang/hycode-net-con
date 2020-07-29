@@ -17,6 +17,10 @@ public abstract class Schedule extends Worker {
         this.startTime = startTime;
     }
 
+    /**
+     * @param seconds 秒
+     * @return Schedule
+     */
     public Schedule cycleTime(int seconds) {
         this.cycleTime = seconds * 1000;
         return this;
